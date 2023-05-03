@@ -90,6 +90,7 @@
                     <TextBlock x:Name="incidentDescLabel" Grid.Column="0" TextAlignment="Right">Incident Description</TextBlock>
                     <TextBox x:Name="incidentDesc" Grid.Column="1" TextWrapping="Wrap" Width="400" Height="75" Margin="2,0,0,0"/>
                 </Grid>
+                <Button x:Name="commitLog" Margin="10" Width="100" Background="SkyBlue" Click="commitLog_Click">Commit Log</Button>
             </StackPanel>
         </Border>
     </Grid>

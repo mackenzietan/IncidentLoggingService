@@ -24,5 +24,10 @@ namespace IncidentLoggingService
         {
             InitializeComponent();
         }
+
+        private void commitLog_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
