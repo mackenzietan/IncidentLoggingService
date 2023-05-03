@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IncidentLoggingService"
         mc:Ignorable="d"
-        Title="Incident Logging Service" Height="250" Width="650">
+        Title="Incident Logging Service" Height="275" Width="650">
     <Grid Margin="10">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
@@ -15,46 +15,79 @@
             <ColumnDefinition Width="100" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0">Menu</Label>
-        <Label Grid.Column="1">Enter Incident Log</Label>
+        <Border BorderBrush="ForestGreen" BorderThickness="1">
+            <Label Grid.Column="0" HorizontalAlignment="Center">Menu</Label>
+        </Border>
+        <Border BorderBrush="Orange" BorderThickness="1" Grid.Column="1">
+            <Label HorizontalAlignment="Center">Incident Log Entry</Label>
+        </Border>
+        <Border BorderBrush="MediumVioletRed" BorderThickness="1" Grid.Row="1" Grid.Column="0">
+            <StackPanel Margin="3">
+                <TextBlock x:Name="menuLogEntry" Margin="2,3,2,6">Log Entry</TextBlock>
+                <TextBlock x:Name="menuIncidentSearch" Margin="2,0,2,6">Search Incidents</TextBlock>
+            </StackPanel>
+        </Border>
 
-        <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,0,0,0">
-            <Grid Margin="3,3,3,0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
-                <TextBox x:Name="incidentNum" Grid.Row="0" Grid.Column="0" Width="75">########</TextBox>
-                <TextBlock x:Name="incidentNumLabel" Grid.Row="1" Grid.Column="0" Width="92">Incident Number</TextBlock>
-                <TextBox x:Name="countyCode" Grid.Row="0" Grid.Column="1" Width="75" Margin="6,0,0,0">##</TextBox>
-                <TextBlock x:Name="countyCodeLabel" Grid.Row="1" Grid.Column="1" Width="92" Margin="6,0,0,0">County Code</TextBlock>
-                <TextBox x:Name="incidentYear" Grid.Row="0" Grid.Column="2" Width="75" Margin="6,0,0,0">###</TextBox>
-                <TextBlock x:Name="incidentYearLabel" Grid.Row="1" Grid.Column="2" Width="92" Margin="6,0,0,0">Incident Year</TextBlock>
-            </Grid>
-            <Grid Margin="3,6,3,3">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="auto" />
-                    <RowDefinition Height="auto" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                    <ColumnDefinition Width="auto" />
-                </Grid.ColumnDefinitions>
-                <TextBlock x:Name="incidentLocLabel" Grid.Row="1" Grid.Column="0">Incident Location</TextBlock>
-                <TextBox x:Name="incidentLoc" Grid.Row="1" Grid.Column="1" Width="200" Margin="2,0,0,0"/>
-                <TextBlock x:Name="incidentDateLabel" Grid.Row="0" Grid.Column="2" Margin="6,0,0,0">Incident Date</TextBlock>
-                <TextBox x:Name="incidentDate" Grid.Row="1" Grid.Column="2" Margin="6,0,0,0">mm/dd/yyyy</TextBox>
-                <TextBlock x:Name="incidentTimeLabel" Grid.Row="0" Grid.Column="3" Margin="6,0,0,0">Incident Time</TextBlock>
-                <TextBox x:Name="incidentTime" Grid.Row="1" Grid.Column="3" Margin="6,0,0,0">hh:mm:ss</TextBox>
-            </Grid>
-        </StackPanel>
-        
+        <Border BorderBrush="BlueViolet" BorderThickness="1" Grid.Row="1" Grid.Column="1">
+            <StackPanel Grid.Row="1" Grid.Column="1" Margin="5,5,5,0">
+                <Grid Margin="3,3,3,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="95" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="95" />
+                    </Grid.ColumnDefinitions>
+                    <TextBox x:Name="incidentNum" Grid.Row="0" Grid.Column="0" Width="65" TextAlignment="Center">########</TextBox>
+                    <TextBlock x:Name="incidentNumLabel" Grid.Row="1" Grid.Column="0" Width="92" TextAlignment="Center">Incident Number</TextBlock>
+                    <TextBox x:Name="countyCode" Grid.Row="0" Grid.Column="1" Width="20" Margin="6,0,0,0" TextAlignment="Center">##</TextBox>
+                    <TextBlock x:Name="countyCodeLabel" Grid.Row="1" Grid.Column="1" Width="92" Margin="6,0,0,0" TextAlignment="Center">County Code</TextBlock>
+                    <TextBox x:Name="incidentYear" Grid.Row="0" Grid.Column="2" Width="35" Margin="6,0,0,0" TextAlignment="Center">####</TextBox>
+                    <TextBlock x:Name="incidentYearLabel" Grid.Row="1" Grid.Column="2" Width="92" Margin="6,0,0,0">Incident Year</TextBlock>
+                </Grid>
+                <Grid Margin="3,6,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="107" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="incidentLocLabel" Grid.Row="1" Grid.Column="0" TextAlignment="Right">Incident Location</TextBlock>
+                    <TextBox x:Name="incidentLoc" Grid.Row="1" Grid.Column="1" Width="200" Margin="2,0,0,0"/>
+                    <TextBlock x:Name="incidentDateLabel" Grid.Row="0" Grid.Column="2" Margin="6,0,0,0">Incident Date</TextBlock>
+                    <TextBox x:Name="incidentDate" Grid.Row="1" Grid.Column="2" Margin="6,0,0,0">mm/dd/yyyy</TextBox>
+                    <TextBlock x:Name="incidentTimeLabel" Grid.Row="0" Grid.Column="3" Margin="6,0,0,0">Incident Time</TextBlock>
+                    <TextBox x:Name="incidentTime" Grid.Row="1" Grid.Column="3" Margin="6,0,0,0">hh:mm:ss</TextBox>
+                </Grid>
+                <Grid Margin="3,6,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="107" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="incidentLocCommentLabel" Grid.Column="0" TextAlignment="Right">Location Comment</TextBlock>
+                    <TextBox x:Name="incidentLocComment" Grid.Column="1" Width="400" Margin="2,0,0,0"/>
+                </Grid>
+                <Grid Margin="3,6,3,3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="107" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock x:Name="incidentDescLabel" Grid.Column="0" TextAlignment="Right">Incident Description</TextBlock>
+                    <TextBox x:Name="incidentDesc" Grid.Column="1" TextWrapping="Wrap" Width="400" Height="75" Margin="2,0,0,0"/>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>
