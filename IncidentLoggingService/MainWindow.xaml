@@ -48,7 +48,7 @@
                     <TextBlock x:Name="incidentYearLabel"   Grid.Row="2" Grid.Column="0" TextAlignment="Right"  Margin="0,0,4,2" FontStyle="Italic">Incident Year</TextBlock>
                     <TextBox x:Name="incidentYear"          Grid.Row="2" Grid.Column="1" TextAlignment="Center" Margin="0,0,4,2" HorizontalAlignment="Left" Width="35"/>
                     <TextBlock x:Name="incidentCodeLabel"   Grid.Row="3" Grid.Column="0" TextAlignment="Right"  Margin="0,0,2,0">Incident Code</TextBlock>
-                    <TextBlock x:Name="incidentCode"        Grid.Row="3" Grid.Column="1" TextAlignment="Left"   Margin="2,0,0,0">########-##-####</TextBlock>
+                    <TextBlock x:Name="incidentCode"        Grid.Row="3" Grid.Column="1" TextAlignment="Left"   Margin="2,0,0,0"/>
                 </Grid>
                 <Grid Margin="3,6,3,3">
                     <Grid.RowDefinitions>
